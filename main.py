@@ -18,12 +18,13 @@ job_elems = results.find_all('section', class_='card-content')
 # and return the items we are interested in
 
 for job_elem in job_elems:
-    # Each job_elem is a new BeautifulSoup object.
-    # we can use the same methods on it as we did before.
-    title_elem = job_elem.find('h2', class_='title')
-    company_elem = job_elem.find('div', class_='company')
-    location_elem = job_elem.find('div', class_='location')
-    print(title_elem)
-    print(company_elem)
-    print(location_elem)
-    print()
+  # Each job_elem is a new BeautifulSoup object.
+  # we can use the same methods on it as we did before.
+  title_elem = job_elem.find('h2', class_='title')
+  company_elem = job_elem.find('div', class_='company')
+  location_elem = job_elem.find('div', class_='location')
+  print(title_elem.text.strip())
+  print(company_elem.text.strip())
+  print(location_elem.text.strip())
+  print()
+
