@@ -33,4 +33,8 @@ for job_elem in job_elems:
   print(location_elem.text.strip())
   print()
 
-print(len(python_jobs))
+# Iterates - finds a hyperlink tag, finds href then prints out string with job title and link to job.
+for p_job in python_jobs:
+  link = p_job.find('a')['href']
+  print(p_job.text.strip())
+  print(f"Apply here: {link}\n")
