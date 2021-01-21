@@ -12,7 +12,9 @@ results = soup.find(id="ResultsContainer")
 # This creates an iterable containing all the HTML for all the job listings displayed on that page.
 job_elems = results.find_all('section', class_='card-content')
 
-# print(results.prettify())
+# We pass a lambda, anonymous function, that converts the text string from our h2 tags
+# to lower case then searches for substring 'sales'.
+python_jobs = results.find_all('h2', string=lambda text: 'sales' in text.lower())
 
 # Iterate to show each element of Beuatiful Soup list
 # and return the items we are interested in
@@ -31,3 +33,4 @@ for job_elem in job_elems:
   print(location_elem.text.strip())
   print()
 
+print(len(python_jobs))
